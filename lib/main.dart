@@ -29,72 +29,48 @@ class MyHomePage extends StatelessWidget {
         theme: ThemeData.dark(),
         title: "EasyTube Downloader",
         home: Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            title: Text(
+              'EasyTube Downloader',
+              style: TextStyle(color: Colors.red),
+            ),
+          ),
           body: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.0),
+              padding: EdgeInsets.all(8.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
+                  Image(image: AssetImage('assets/images/easytube_icon.png')),
                   TextField(
                       decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: Colors.blueAccent,
+                        color: Colors.red,
                       ),
-                      borderRadius: BorderRadius.circular(10.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
-                    hintText: "Enabled decoration text ...",
+                    hintText: "Paste the YouTube url here",
                   )),
-                  SizedBox(height: 10),
-                  TextField(
-                    decoration: InputDecoration(
-                      disabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.grey,
-                        ),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      hintText: "Disabled decoration text ...",
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    child: Text('Download audio'),
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.red),
                     ),
-                    enabled: false,
+                    onPressed: () {/** */},
                   ),
-                  SizedBox(height: 10),
-                  TextField(
-                    decoration: InputDecoration(
-                        errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.red,
-                          ),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        hintText: "Error decoration text ...",
-                        errorText: "Ooops, something is not right!",
-                        errorStyle: TextStyle(
-                            color: Colors.red, fontWeight: FontWeight.bold)),
-                  ),
-                  SizedBox(height: 10),
-                  TextField(
-                    decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.blue,
-                        ),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      hintText: "Focus decoration text ...",
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    child: Text('Download video'),
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.red),
                     ),
+                    onPressed: () {/** */},
                   ),
-                  SizedBox(height: 10),
-                  TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.red, //this has no effect
-                        ),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      hintText: "Border decoration text ...",
-                    ),
-                  )
                 ],
               )),
         ));
