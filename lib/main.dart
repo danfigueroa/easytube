@@ -39,7 +39,7 @@ class MyHomePage extends StatelessWidget {
           body: Padding(
               padding: EdgeInsets.all(8.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Image(image: AssetImage('assets/images/easytube_icon.png')),
@@ -51,7 +51,7 @@ class MyHomePage extends StatelessWidget {
                       ),
                       borderRadius: BorderRadius.circular(20.0),
                     ),
-                    hintText: "Paste the YouTube url here",
+                    labelText: "Paste the YouTube url here",
                   )),
                   SizedBox(height: 20),
                   ElevatedButton(
